@@ -20,7 +20,7 @@ VS Code snippets require hardcoded tab stop counts (`${1} ${1} ${1}`). There's n
 2. Open Command Palette (`Ctrl+Shift+P`)
 3. Run a MagicSplit command → enter N → type once, all positions update
 
-<!-- GIF demo here -->
+![MagicSplit demo](images/how-to-use-magic-split.gif)
 
 ## Use Cases
 
