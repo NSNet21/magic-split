@@ -3,7 +3,7 @@
   "displayName": "MagicSplit",
   "description": "Insert N synced tab stops at runtime — space, newline, or any custom separator.",
   "version": "1.0.0",
-  "publisher": "frostzerokill",
+  "publisher": "nsnet",
   "engines": {
     "vscode": "^1.85.0"
   },
