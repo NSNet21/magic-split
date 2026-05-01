@@ -1,0 +1,67 @@
+{
+  "name": "magic-split",
+  "displayName": "MagicSplit",
+  "description": "Insert N synced tab stops at runtime — space, newline, or any custom separator.",
+  "version": "1.0.0",
+  "publisher": "frostzerokill",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frostzerokill/magic-split"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "magicSplit.insertInline",
+        "title": "Magic Split: Insert Inline"
+      },
+      {
+        "command": "magicSplit.insertMultiLine",
+        "title": "Magic Split: Insert Multi-line"
+      },
+      {
+        "command": "magicSplit.insertWithSeparator",
+        "title": "Magic Split: Insert with Separator"
+      }
+    ],
+    "configuration": {
+      "title": "MagicSplit",
+      "properties": {
+        "magicSplit.customSeparators": {
+          "type": "array",
+          "description": "Separator presets shown in 'Insert with Separator' command.",
+          "default": [
+            { "label": "Comma + Space", "value": ", ",  "enabled": true },
+            { "label": "Pipe",          "value": " | ", "enabled": true },
+            { "label": "Tab",           "value": "\t",  "enabled": false }
+          ],
+          "items": {
+            "type": "object",
+            "required": ["label", "value", "enabled"],
+            "properties": {
+              "label":   { "type": "string",  "description": "Display name in QuickPick" },
+              "value":   { "type": "string",  "description": "Separator string inserted between positions" },
+              "enabled": { "type": "boolean", "description": "Whether this separator appears in QuickPick" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}

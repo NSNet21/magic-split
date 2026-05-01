@@ -1,0 +1,61 @@
+<!-- cspell:disable -->
+MagicSplit — Test Playground
+วาง cursor ที่ [CURSOR] แล้วรัน command ที่ระบุ
+============================================================
+
+
+── 1. Insert Inline (N=3) ───────────────────────────────────
+Use case: CSS transform values
+  transform: translate( [CURSOR] px, px, px )
+expect: ${1} ${1} ${1}
+
+
+── 2. Insert Inline (N=3) ───────────────────────────────────
+Use case: color channel values
+  color: rgb( [CURSOR] )
+expect: rgb(${1} ${1} ${1})
+
+
+── 3. Insert Inline (N=4) ───────────────────────────────────
+Use case: rgba (4 values)
+  color: rgba( [CURSOR] )
+expect: rgba(${1} ${1} ${1} ${1})
+
+
+── 4. Insert Multi-line (N=3) ───────────────────────────────
+Use case: box-shadow layers (one per line)
+  shadow: [
+    [CURSOR]
+  ]
+expect:
+  ${1}
+  ${1}
+  ${1}
+
+
+── 5. Insert with Separator → Comma + Space (N=3) ───────────
+Use case: rgb(r, g, b)
+  rgb( [CURSOR] )
+expect: rgb(${1}, ${1}, ${1})
+
+
+── 6. Insert with Separator → Pipe (N=3) ────────────────────
+Use case: TypeScript union / template alternatives
+  type Direction = [CURSOR]
+expect: ${1} | ${1} | ${1}
+
+
+── 7. Insert with Separator → Pipe (N=4) ────────────────────
+Use case: multi-value inline options
+  variants: [CURSOR]
+expect: ${1} | ${1} | ${1} | ${1}
+
+
+── Edge Cases ────────────────────────────────────────────────
+[ ] พิมพ์ "abc" ใน N input         → error: Enter a number between 2 and 20
+[ ] พิมพ์ 1                        → reject
+[ ] พิมพ์ 21                       → reject
+[ ] Esc ที่ N input                → cancel เงียบ ไม่ insert
+[ ] Esc ที่ separator picker        → cancel เงียบ ไม่โชว์ N input
+[ ] Tab separator (disabled=false) → ไม่โชว์ใน QuickPick
+<!-- cspell:enable -->
