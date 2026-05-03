@@ -13,8 +13,11 @@ VS Code snippets require hardcoded tab stop counts (`${1} ${1} ${1}`). There's n
 | `Magic Split: Insert Inline` | N tab stops separated by space |
 | `Magic Split: Insert Multi-line` | N tab stops on separate lines |
 | `Magic Split: Insert with Separator` | N tab stops with a custom separator |
+| `Magic Split: Distribute to Cursors` | Fill each active cursor with a different word |
 
 ## Usage
+
+**Insert commands (1–3)** — create N synced cursors:
 
 1. Place cursor where you want to insert
 2. Open Command Palette (`Ctrl+Shift+P`)
@@ -22,12 +25,23 @@ VS Code snippets require hardcoded tab stop counts (`${1} ${1} ${1}`). There's n
 
 ![MagicSplit demo](https://raw.githubusercontent.com/NSNet21/magic-split/main/images/how-to-use-magic-split.gif)
 
+**Distribute to Cursors** — fill pre-existing cursors with different values:
+
+1. Place 2+ cursors with `Alt+Click`
+2. Open Command Palette → `Magic Split: Distribute to Cursors`
+3. Enter space-separated words (e.g. `red green blue`)
+4. Each cursor gets its own word in order
+
+> Words > cursors → excess words are ignored  
+> Cursors > words → excess cursors are removed
+
 ## Use Cases
 
 - CSS variable repetition: `var(--x) var(--x) var(--x)`
 - Color channels: `rgb(255, 255, 255)`
 - Box-shadow layers (multi-line)
 - TypeScript union types: `"a" | "b" | "c"`
+- Fill different values at each cursor: select 3 spots → distribute `red green blue`
 
 ## Configuration
 

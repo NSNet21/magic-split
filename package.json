@@ -2,7 +2,7 @@
   "name": "magic-split",
   "displayName": "MagicSplit",
   "description": "Insert N synced tab stops at runtime — space, newline, or any custom separator.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "publisher": "nsnet",
   "engines": {
     "vscode": "^1.85.0"
@@ -28,6 +28,10 @@
       {
         "command": "magicSplit.insertWithSeparator",
         "title": "Magic Split: Insert with Separator"
+      },
+      {
+        "command": "magicSplit.distributeToCursors",
+        "title": "Magic Split: Distribute to Cursors"
       }
     ],
     "configuration": {
